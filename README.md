@@ -1,2 +1,2 @@
 # Hack_O_Ween-Game
-A pygame made for the Hack'O'Ween 
+A pygame made for the UofL 2022 Hack'O'Ween 
