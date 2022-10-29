@@ -151,6 +151,9 @@ while running:
             running = False
             pygame.quit()
             quit()
+    
+    player.updatePlayer()
+
     redraw(player)
     zombie.moveDown()
     redraw(zombie)

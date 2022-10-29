@@ -16,14 +16,18 @@ class Player(Character):
         pass
     
     def  moveUp(self):
-        pass
+        self.y -= 0.2
     def  moveDown(self):
-        pass            
+        self.y += 0.2
     def  moveLeft(self):
-        pass
+        self.x -= 0.2
     def  moveRight(self):
-        pass
-    
+        self.x += 0.2
+
+
+
+
+
 class Zombie(Character):
     def __init__(self, location, x, y, parent_screen):
         super().__init__(location, x, y, parent_screen)
@@ -33,4 +37,4 @@ class Zombie(Character):
         if(self.y > SCREEN_HEIGHT):
             self.y = 0
         else:
-            self.y += 1;          
+            self.y += 1;  
