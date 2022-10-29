@@ -146,6 +146,9 @@ while running:
                     
                 if event.key == K_RIGHT:
                     player.moveRight()
+
+        if event.type == KEYUP:
+            player.resetXYChange()
                     
         if event.type == pygame.QUIT:
             running = False

@@ -29,6 +29,9 @@ class Player(Character):
     def  updatePlayer(self):
         self.x += self.playerX_change 
         self.y += self.playerY_change
+    def  resetXYChange(self):
+        self.playerX_change = 0
+        self.playerY_change = 0
 
 
 
