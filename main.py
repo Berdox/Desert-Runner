@@ -94,10 +94,11 @@ from Background import backgroundDraw
 from Character import Player
 
 pygame.init()
+pygame.display.set_icon(pygame.image.load('./resource/pumpkin.png'))
 
 
-SCREEN_WIDTH = 500
-SCREEN_HEIGHT = 650
+SCREEN_WIDTH = 480
+SCREEN_HEIGHT = 800
 
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
