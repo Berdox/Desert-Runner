@@ -92,7 +92,7 @@ while not done:
 import pygame
 from pygame.locals import *
 from Background import backgroundDraw
-from Character import Player
+from Character import *
 
 pygame.init()
 #setting icon
@@ -114,11 +114,17 @@ def redraw(image):
     pygame.display.flip()
 
 #player make
-locA = pygame.image.load("./resource/block.jpg").convert()
+locP = pygame.image.load("./resource/block.jpg").convert()
 xP = 250
 yP = 100
-player = Player(locA, xP, yP, screen)
+player = Player(locP, xP, yP, screen)
 redraw(player)
+
+locZ = pygame.image.load("./resource/block.jpg").convert()
+xZ = 250
+yZ = 0
+zombie = Zombie(locZ, xZ, yZ, screen)
+redraw(zombie)
 
 while running:
     
@@ -128,6 +134,7 @@ while running:
                 if event.key == K_ESCAPE:
                     running = False
                     pygame.quit()
+                    
                 if event.key == K_UP:
                     player.moveUp()
                 
@@ -145,4 +152,6 @@ while running:
             pygame.quit()
             quit()
     redraw(player)
+    zombie.moveDown()
+    redraw(zombie)
     back.run()
