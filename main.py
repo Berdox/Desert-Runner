@@ -89,7 +89,6 @@ while not done:
             dspGameOver()
             break
 '''
-from timeit import repeat
 import pygame
 from Background import backgroundDraw
 from Character import Player
