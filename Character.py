@@ -24,9 +24,17 @@ class Player(Character):
     def  moveRight(self):
         self.playerX_change += 2
     def  updatePlayer(self):
+        if self.x <= 100:
+            self.x = 100
+        if self.x >= 350:
+            self.x = 350
         self.x += self.playerX_change 
         self.y += self.playerY_change
     def  resetXYChange(self):
+        if self.y <= 25:
+            self.y = 25
+        if self.y >= 750:
+            self.y = 750
         self.playerX_change = 0
         self.playerY_change = 0
 
