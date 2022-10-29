@@ -1,6 +1,3 @@
-  
-from main2 import SCREEN_HEIGHT
-
 
 class Character:
     
@@ -41,7 +38,7 @@ class Zombie(Character):
         pass
     
     def  moveDown(self):
-        if(self.y > SCREEN_HEIGHT):
+        if(self.y > 800):
             self.y = 0
         else:
             self.y += 1;  
