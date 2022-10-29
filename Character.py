@@ -16,13 +16,13 @@ class Player(Character):
         pass
     
     def  moveUp(self):
-        self.playerY_change -= 0.2
+        self.playerY_change -= 2
     def  moveDown(self):
-        self.playerY_change += 0.2
+        self.playerY_change += 2
     def  moveLeft(self):
-        self.playerX_change -= 0.2
+        self.playerX_change -= 2
     def  moveRight(self):
-        self.x += 0.2
+        self.playerX_change += 2
     def  updatePlayer(self):
         self.x += self.playerX_change 
         self.y += self.playerY_change
