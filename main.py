@@ -126,8 +126,8 @@ while running:
         if event.type == KEYDOWN:
                 
                 if event.key == K_ESCAPE:
-                      running = False
-                      pygame.quit()
+                    running = False
+                    pygame.quit()
                 if event.key == K_UP:
                     player.moveUp()
                 
