@@ -90,6 +90,7 @@ while not done:
             break
 '''
 import pygame
+from pygame.locals import *
 from Background import backgroundDraw
 from Character import Player
 
@@ -122,6 +123,23 @@ redraw(player)
 while running:
     
     for event in pygame.event.get():
+        if event.type == KEYDOWN:
+                
+                if event.key == K_ESCAPE:
+                      running = False
+                      pygame.quit()
+                if event.key == K_UP:
+                    player.moveUp()
+                
+                if event.key == K_DOWN:
+                    player.moveDown()
+                
+                if event.key == K_LEFT:
+                    player.moveLeft()
+                    
+                if event.key == K_RIGHT:
+                    player.moveRight()
+                    
         if event.type == pygame.QUIT:
             running = False
             pygame.quit()
