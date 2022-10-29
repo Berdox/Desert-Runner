@@ -13,10 +13,10 @@ class Player(Character):
         pass
     
     def  moveUp(self):
-        pass
+        self.y -= 0.2
     def  moveDown(self):
-        pass            
+        self.y += 0.2
     def  moveLeft(self):
-        pass
+        self.x -= 0.2
     def  moveRight(self):
-        pass
+        self.x += 0.2
