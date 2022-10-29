@@ -1,5 +1,9 @@
 Virtual environment creation for Windows
 
+py -3 -m venv .venv
+
+Virtual environment creation for Windows
+
 .venv\scripts\activate
 
 Virtual environment creation for macOS/Linux
@@ -9,3 +13,7 @@ source .venv/bin/activate
 my need to activate scripts
 
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+
+install packages
+pip install moviepy
