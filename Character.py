@@ -26,8 +26,9 @@ class Player(Character):
         self.playerX_change -= 0.2
     def  moveRight(self):
         self.x += 0.2
-
-
+    def  updatePlayer(self):
+        self.x += self.playerX_change 
+        self.y += self.playerY_change
 
 
 
