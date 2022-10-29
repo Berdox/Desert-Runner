@@ -96,6 +96,7 @@ from Character import Player
 pygame.init()
 #setting icon
 pygame.display.set_icon(pygame.image.load('./resource/pumpkin.png'))
+
 #setting screen dimesions and setting up screen
 SCREEN_WIDTH = 480
 SCREEN_HEIGHT = 800

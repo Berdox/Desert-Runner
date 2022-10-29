@@ -1,18 +1,18 @@
-from timeit import repeat
 import pygame
 from Background import backgroundDraw
 from Character import Player
 
 pygame.init()
-
-
-SCREEN_WIDTH = 500
-SCREEN_HEIGHT = 650
-
-
+#setting icon
+pygame.display.set_icon(pygame.image.load('./resource/pumpkin.png'))
+#setting screen dimesions and setting up screen
+SCREEN_WIDTH = 480
+SCREEN_HEIGHT = 800
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 running = True
+
+#make background
 back = backgroundDraw(SCREEN_WIDTH, SCREEN_HEIGHT, screen)
 back.getResources()
 
@@ -20,6 +20,7 @@ def redraw(image):
     image.parent_screen.blit(image.loc, (image.x, image.y))
     pygame.display.flip()
 
+#player make
 locA = pygame.image.load("./resource/block.jpg").convert()
 xP = 250
 yP = 100
