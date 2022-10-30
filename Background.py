@@ -8,7 +8,7 @@ class backgroundDraw:
     yValue = 0
     index = 0
     index2 = 1
-    speed = 2
+    speed = 4
     background = []
     
     def __init__(self, widthScreen, heightScreen, window):
@@ -17,6 +17,10 @@ class backgroundDraw:
         self.screen = window
     
     def getResources(self):
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
         self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
         self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
         self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
@@ -40,5 +44,5 @@ class backgroundDraw:
         self.screen.blit(self.background[self.index2], [0, -self.height+self.yValue])
             
     def backgSpeed(self, faster):
-        self.speed = faster
+        self.speed += faster
     

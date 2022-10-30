@@ -43,13 +43,17 @@ def show_score(xS, yS):
     screen.blit(score, (xS, yS))
     
 rumble = pygame.mixer.Sound("./resource/sound/rumble.wav")
-
+rumble.set_volume(0.1)
+pygame.mixer.Sound.play(rumble)
+accelrate = pygame.mixer.Sound("./resource/sound/accelrate.wav")
+accelrate.set_volume(0.1)
 
 spawn = Spawner(SCREEN_WIDTH)
 
 while running:
     
     clock.tick(FPS)
+    back.run()
     for event in pygame.event.get():
         if event.type == KEYDOWN:
                 
@@ -58,6 +62,7 @@ while running:
                     
             if event.key == K_UP:
                 player.moveUp()
+                pygame.mixer.Sound.play(accelrate)
                 
             if event.key == K_DOWN:
                 player.moveDown()
@@ -76,25 +81,27 @@ while running:
     
     player.updatePlayer()
     score_value += 1
-    back.run()
     utili.redraw(player)
-    pygame.mixer.Sound.play(rumble)
-    
+
     spawn.spawnZombie(pygame.image.load("./resource/block.jpg").convert(), screen)
 
     for i in spawn.zombiesList:
-        print(i.x)
         i.moveDown()
         utili.redraw(i)
         if utili.find_collision_rect(player, i):
             running = False
         if i.y > SCREEN_HEIGHT:
             spawn.zombiesList.remove(i)
-            print("delete")
-            
+    
+    if (score_value/1000) % 1 == 0:
+        print("score", score_value)
+        spawn.changeSpawnRate(1.5)
+        #changeSpeed(1)
+        #back.backgSpeed(1)     
     #if not utili.find_collision_window(player, SCREEN_WIDTH, SCREEN_HEIGHT):        
     #pygame.display.flip()
     show_score(xS, yS)
     pygame.display.update()
+    
     
 pygame.quit()

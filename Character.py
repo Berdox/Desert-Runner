@@ -1,6 +1,11 @@
 import random
+
 SPEED = 4
 
+def changeSpeed(num):
+    global SPEED 
+    SPEED += num
+    
 class Character:
     
     def __init__(self, resourceLocation, x, y, parent_Screen):
@@ -54,7 +59,7 @@ class Zombie(Character):
         
 class Spawner:
     zombiesList = []
-    chance = 1000
+    chance = 600
     
     def __init__(self, screenWidth):
         self.width = screenWidth
@@ -64,7 +69,6 @@ class Spawner:
         if ran < 10:
             Swidth = random.randint(0, self.width)
             self.zombiesList.append(Zombie(loc, Swidth, -10, screen))
-            print("made zombie")
     
     def changeSpawnRate(self, num):
-        self.chance = num       
+        self.chance = int(self.chance / num)       
