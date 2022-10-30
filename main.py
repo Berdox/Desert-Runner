@@ -105,6 +105,9 @@ while running:
     
     if over != True:
         spawn.spawnZombie(utili.resize(pygame.image.load("./resource/zombie1.png").convert_alpha(), 0.3), screen)
+        zombie_Sound = pygame.mixer.Sound('./resource/sound/zombie.wav')
+        zombie_Sound.play()
+        zombie_Sound.set_volume(0.2)
     else:
         show_Game_Over()
         show_Play_Again()
