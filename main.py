@@ -9,6 +9,7 @@ pygame.init()
 pygame.mixer.init()
 #setting icon
 pygame.display.set_icon(pygame.image.load('./resource/pumpkin.png'))
+pygame.display.set_caption('Desert Runner')
 
 #setting screen dimesions and setting up screen
 SCREEN_WIDTH = 500
@@ -43,7 +44,7 @@ def show_score(xS, yS):
     screen.blit(score, (xS, yS))
     
 rumble = pygame.mixer.Sound("./resource/sound/rumble.wav")
-rumble.set_volume(0.1)
+rumble.set_volume(0.0)
 
 # Background Music
 mixer.music.load('./resource/sound/background.wav')
@@ -109,8 +110,8 @@ while running:
         zombie_Sound.play()
         zombie_Sound.set_volume(0.2)
     else:
-        player_Crash = pygame.mixer.Sound('./resource/sound/explosion.wav')
-        player_Crash.play()
+        #player_Crash = pygame.mixer.Sound('./resource/sound/explosion.wav')
+        #player_Crash.play()
         show_Game_Over()
         show_Play_Again()
 
