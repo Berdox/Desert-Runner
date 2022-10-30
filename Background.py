@@ -16,20 +16,12 @@ class backgroundDraw:
         self.screen = window
     
     def getResources(self):
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0178.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0197.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0213.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0232.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0250.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0268.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0286.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0304.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0322.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0340.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0358.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0377.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0396.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/0411.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
         
         
     def run(self):
@@ -45,7 +37,5 @@ class backgroundDraw:
         if self.index2 == 1:
             self.index = 0
         self.screen.blit(self.background[self.index2], [0, -self.height+self.yValue])
-
-        pygame.display.update()
             
 

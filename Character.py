@@ -24,10 +24,10 @@ class Player(Character):
     def  moveRight(self):
         self.playerX_change += 2
     def  updatePlayer(self):
-        if self.x <= 100:
-            self.x = 100
-        if self.x >= 350:
-            self.x = 350
+        if self.x <= 10:
+            self.x = 10
+        if self.x >= 450:
+            self.x = 450
         self.x += self.playerX_change 
         self.y += self.playerY_change
     def  resetXYChange(self):
@@ -46,7 +46,7 @@ class Zombie(Character):
         pass
     
     def  moveDown(self):
-        if(self.y > 800):
+        if(self.y > self.parent_screen.get_height()):
             self.y = 0
         else:
             self.y += 1;  

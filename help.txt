@@ -16,4 +16,3 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 
 
 install packages
-pip install moviepy
