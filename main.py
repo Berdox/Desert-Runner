@@ -40,6 +40,11 @@ def show_score(xS, yS):
     score = font.render("Kilometers: " + str(score1), True, (0,0,0))
     screen.blit(score, (xS, yS))
 
+#end game screen
+def show_Game_Over():
+    text = font.render("GAME OVER", True, (0,0,0))
+    screen.blit(text, (250, 400))
+
 spawn = Spawner(SCREEN_WIDTH)
 
 while running:
