@@ -47,11 +47,13 @@ rumble = pygame.mixer.Sound("./resource/sound/rumble.wav")
 
 #end game screen
 def show_Game_Over():
-    text = font.render("GAME OVER", True, (0,0,0))
-    screen.blit(text, (250, 400))
+    font = pygame.font.Font('freesansbold.ttf', 80)
+    text = font.render("GAME OVER", True, (255,0,0))
+    screen.blit(text, (0, 350))
 
 spawn = Spawner(SCREEN_WIDTH)
 
+over = False
 while running:
     
     clock.tick(FPS)
@@ -80,19 +82,27 @@ while running:
             running = False
     
     player.updatePlayer()
-    score_value += 1
+    if over != True:
+        score_value += 1
     back.run()
     utili.redraw(player)
     pygame.mixer.Sound.play(rumble)
     
-    spawn.spawnZombie(pygame.image.load("./resource/block.jpg").convert(), screen)
+    if over != True:
+        spawn.spawnZombie(pygame.image.load("./resource/block.jpg").convert(), screen)
+    else:
+        show_Game_Over()
 
     for i in spawn.zombiesList:
         print(i.x)
         i.moveDown()
         utili.redraw(i)
         if utili.find_collision_rect(player, i):
-            running = False
+            for i in spawn.zombiesList:
+                spawn.zombiesList.remove(i)
+            over = True
+            break
+            #running = False
         if i.y > SCREEN_HEIGHT:
             spawn.zombiesList.remove(i)
             print("delete")
