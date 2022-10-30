@@ -51,6 +51,11 @@ def show_Game_Over():
     text = font.render("GAME OVER", True, (255,0,0))
     screen.blit(text, (0, 350))
 
+def show_Play_Again():
+    font = pygame.font.Font('freesansbold.ttf', 24)
+    text = font.render("Play Again? Press 1, or ESC to leave", True, (0,0,0))
+    screen.blit(text, (35, 450))
+
 spawn = Spawner(SCREEN_WIDTH)
 
 over = False
@@ -62,6 +67,10 @@ while running:
                 
             if event.key == K_ESCAPE:
                 running = False
+
+            if event.key == K_1:
+                over = False
+                score_value = 0
                     
             if event.key == K_UP:
                 player.moveUp()
@@ -92,6 +101,7 @@ while running:
         spawn.spawnZombie(pygame.image.load("./resource/block.jpg").convert(), screen)
     else:
         show_Game_Over()
+        show_Play_Again()
 
     for i in spawn.zombiesList:
         print(i.x)
@@ -102,7 +112,6 @@ while running:
                 spawn.zombiesList.remove(i)
             over = True
             break
-            #running = False
         if i.y > SCREEN_HEIGHT:
             spawn.zombiesList.remove(i)
             print("delete")
