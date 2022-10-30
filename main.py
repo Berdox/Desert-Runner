@@ -9,6 +9,7 @@ pygame.init()
 pygame.mixer.init()
 #setting icon
 pygame.display.set_icon(pygame.image.load('./resource/pumpkin.png'))
+pygame.display.set_caption('Desert Runner')
 
 #setting screen dimesions and setting up screen
 SCREEN_WIDTH = 500
