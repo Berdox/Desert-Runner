@@ -42,7 +42,6 @@ def show_score(xS, yS):
     score = font.render("Kilometers: " + str(score1), True, (0,0,0))
     screen.blit(score, (xS, yS))
     
-rumble = pygame.mixer.Sound("./resource/sound/rumble.wav")
 
 # Background Music
 mixer.music.load('./resource/sound/background.wav')
@@ -78,7 +77,6 @@ while running:
                     
             if event.key == K_UP:
                 player.moveUp()
-                pygame.mixer.Sound.play(accelrate)
                 
             if event.key == K_DOWN:
                 player.moveDown()
