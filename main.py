@@ -43,7 +43,7 @@ def show_score(xS, yS):
     screen.blit(score, (xS, yS))
     
 rumble = pygame.mixer.Sound("./resource/sound/rumble.wav")
-rumble.set_volume(0.1)
+rumble.set_volume(0.0)
 
 # Background Music
 mixer.music.load('./resource/sound/background.wav')
