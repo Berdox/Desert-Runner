@@ -42,6 +42,8 @@ def show_score(xS, yS):
     score = font.render("Kilometers: " + str(score1), True, (0,0,0))
     screen.blit(score, (xS, yS))
     
+rumble = pygame.mixer.Sound("./resource/sound/rumble.wav")
+rumble.set_volume(0.1)
 
 # Background Music
 mixer.music.load('./resource/sound/background.wav')
