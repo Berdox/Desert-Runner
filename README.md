@@ -7,9 +7,10 @@ A pygame made for the UofL 2022 Hack'O'Ween
 2. run this in command in the terminal
 ```.venv\scripts\activate```
 to activate the virtual environment
-\nmay need to run 
+
+may need to run 
 ```Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process```
-to let scripts run on Windows\n
+to let scripts run on Windows
 3. Then run the command
 ```python main.py```
 in terminal to run program
