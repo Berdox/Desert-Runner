@@ -113,6 +113,7 @@ while running:
         #player_Crash = pygame.mixer.Sound('./resource/sound/explosion.wav')
         #player_Crash.play()
         show_Game_Over()
+        spawn.chance = 600
         show_Play_Again()
 
     for i in spawn.zombiesList:
