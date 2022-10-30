@@ -29,16 +29,11 @@ yP = 700
 player = Player(locP, xP, yP, screen)
 utili.redraw(player)
 
-locZ = pygame.image.load("./resource/block.jpg").convert()
-xZ = 250
-yZ = 0
-zombie = Zombie(locZ, xZ, yZ, screen)
-utili.redraw(zombie)
+spawn = Spawner(SCREEN_WIDTH)
 
 while running:
     
     clock.tick(FPS)
-    
     for event in pygame.event.get():
         if event.type == KEYDOWN:
                 
@@ -67,11 +62,20 @@ while running:
 
     back.run()
     utili.redraw(player)
-    zombie.moveDown()
-    utili.redraw(zombie)
+    
+    spawn.spawnZombie(pygame.image.load("./resource/block.jpg").convert(), screen)
+
+    for i in spawn.zombiesList:
+        print(i.x)
+        i.moveDown()
+        utili.redraw(i)
+        if utili.find_collision_rect(player, i):
+            running = False
+        if i.y > SCREEN_HEIGHT:
+            spawn.zombiesList.remove(i)
+            print("delete")
+            
     #if not utili.find_collision_window(player, SCREEN_WIDTH, SCREEN_HEIGHT):        
-    if utili.find_collision_rect(player, zombie):
-        running = False
     #pygame.display.flip()
     pygame.display.update()
     
