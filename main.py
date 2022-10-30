@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 from Background import backgroundDraw
 from Character import *
+import utili
 
 pygame.init()
 #setting icon
@@ -37,7 +38,6 @@ yZ = 0
 zombie = Zombie(locZ, xZ, yZ, screen)
 redraw(zombie)
 
-
 while running:
     
     clock.tick(FPS)
@@ -48,17 +48,18 @@ while running:
                 if event.key == K_ESCAPE:
                     running = False
                     
-                if event.key == K_UP:
-                    player.moveUp()
+                if not utili.find_collision_window(player, SCREEN_WIDTH, SCREEN_HEIGHT):        
+                    if event.key == K_UP:
+                        player.moveUp()
                 
-                if event.key == K_DOWN:
-                    player.moveDown()
+                    if event.key == K_DOWN:
+                        player.moveDown()
                 
-                if event.key == K_LEFT:
-                    player.moveLeft()
+                    if event.key == K_LEFT:
+                        player.moveLeft()
                     
-                if event.key == K_RIGHT:
-                    player.moveRight()
+                    if event.key == K_RIGHT:
+                        player.moveRight()
 
         if event.type == KEYUP:
             player.resetXYChange()
