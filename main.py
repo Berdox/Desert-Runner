@@ -1,10 +1,12 @@
 import pygame
 from pygame.locals import *
+from pygame import mixer
 from Background import backgroundDraw
 from Character import *
 import utili
 
 pygame.init()
+pygame.mixer.init()
 #setting icon
 pygame.display.set_icon(pygame.image.load('./resource/pumpkin.png'))
 
@@ -39,6 +41,9 @@ def show_score(xS, yS):
     score1 = score_value/1000
     score = font.render("Kilometers: " + str(score1), True, (0,0,0))
     screen.blit(score, (xS, yS))
+    
+rumble = pygame.mixer.Sound("./resource/sound/rumble.wav")
+
 
 spawn = Spawner(SCREEN_WIDTH)
 
@@ -73,6 +78,7 @@ while running:
     score_value += 1
     back.run()
     utili.redraw(player)
+    pygame.mixer.Sound.play(rumble)
     
     spawn.spawnZombie(pygame.image.load("./resource/block.jpg").convert(), screen)
 
