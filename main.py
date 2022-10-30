@@ -25,7 +25,7 @@ def redraw(image):
     image.parent_screen.blit(image.loc, (image.x, image.y))
 
 #player make
-locP = pygame.image.load("./resource/block.jpg").convert()
+locP = pygame.image.load("./resource/cartrans.png").convert()
 xP = 250
 yP = 100
 player = Player(locP, xP, yP, screen)
