@@ -51,7 +51,7 @@ mixer.music.play(-1)
 
 #end game screen
 def show_Game_Over():
-    font = pygame.font.Font('freesansbold.ttf', 80)
+    font = pygame.font.Font('./resource/over.ttf', 80)
     text = font.render("GAME OVER", True, (255,0,0))
     screen.blit(text, (0, 350))
 
