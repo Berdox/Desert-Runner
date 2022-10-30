@@ -44,6 +44,9 @@ def show_score(xS, yS):
     
 rumble = pygame.mixer.Sound("./resource/sound/rumble.wav")
 
+# Background Music
+mixer.music.load('./resource/sound/background.wav')
+mixer.music.play(-1)
 
 #end game screen
 def show_Game_Over():
@@ -98,6 +101,8 @@ while running:
         i.moveDown()
         utili.redraw(i)
         if utili.find_collision_rect(player, i):
+            #player_Crash = pygame.mixer.Sound('./resource/sound/explosion.wav')
+            #player_Crash.play()
             for i in spawn.zombiesList:
                 spawn.zombiesList.remove(i)
             over = True
