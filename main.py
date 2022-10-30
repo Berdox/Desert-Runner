@@ -43,15 +43,21 @@ def show_score(xS, yS):
     screen.blit(score, (xS, yS))
     
 rumble = pygame.mixer.Sound("./resource/sound/rumble.wav")
-rumble.set_volume(0.01)
-accelrate = pygame.mixer.Sound("./resource/sound/accelrate.wav")
-accelrate.set_volume(0.1)
+
+# Background Music
+mixer.music.load('./resource/sound/background.wav')
+mixer.music.play(-1)
 
 #end game screen
 def show_Game_Over():
     font = pygame.font.Font('freesansbold.ttf', 80)
     text = font.render("GAME OVER", True, (255,0,0))
     screen.blit(text, (0, 350))
+
+def show_Play_Again():
+    font = pygame.font.Font('freesansbold.ttf', 24)
+    text = font.render("Play Again? Press 1, or ESC to leave", True, (0,0,0))
+    screen.blit(text, (35, 450))
 
 spawn = Spawner(SCREEN_WIDTH)
 
@@ -65,6 +71,10 @@ while running:
                 
             if event.key == K_ESCAPE:
                 running = False
+
+            if event.key == K_1:
+                over = False
+                score_value = 0
                     
             if event.key == K_UP:
                 player.moveUp()
@@ -96,16 +106,18 @@ while running:
         spawn.spawnZombie(utili.resize(pygame.image.load("./resource/zombie.png").convert_alpha(), 0.3), screen)
     else:
         show_Game_Over()
+        show_Play_Again()
 
     for i in spawn.zombiesList:
         i.moveDown()
         utili.redraw(i)
         if utili.find_collision_rect(player, i):
+            #player_Crash = pygame.mixer.Sound('./resource/sound/explosion.wav')
+            #player_Crash.play()
             for i in spawn.zombiesList:
                 spawn.zombiesList.remove(i)
             over = True
             break
-            #running = False
         if i.y > SCREEN_HEIGHT:
             spawn.zombiesList.remove(i)
     
