@@ -73,9 +73,10 @@ while running:
             if event.key == K_ESCAPE:
                 running = False
 
-            if event.key == K_1:
-                over = False
-                score_value = 0
+            if over == True:
+                if event.key == K_1:
+                    over = False
+                    score_value = 0
                     
             if event.key == K_UP:
                 player.moveUp()
