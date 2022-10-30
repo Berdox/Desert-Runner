@@ -29,16 +29,22 @@ yP = 700
 player = Player(locP, xP, yP, screen)
 utili.redraw(player)
 
-locZ = pygame.image.load("./resource/block.jpg").convert()
-xZ = 250
-yZ = 0
-zombie = Zombie(locZ, xZ, yZ, screen)
-utili.redraw(zombie)
+#make score
+score_value = 0
+font = pygame.font.Font('freesansbold.ttf', 32)
+xS = 10
+yS = 10
+
+def show_score(xS, yS):
+    score1 = score_value/1000
+    score = font.render("Kilometers: " + str(score1), True, (0,0,0))
+    screen.blit(score, (xS, yS))
+
+spawn = Spawner(SCREEN_WIDTH)
 
 while running:
     
     clock.tick(FPS)
-    
     for event in pygame.event.get():
         if event.type == KEYDOWN:
                 
@@ -64,15 +70,25 @@ while running:
             running = False
     
     player.updatePlayer()
-
+    score_value += 1
     back.run()
     utili.redraw(player)
-    zombie.moveDown()
-    utili.redraw(zombie)
+    
+    spawn.spawnZombie(pygame.image.load("./resource/block.jpg").convert(), screen)
+
+    for i in spawn.zombiesList:
+        print(i.x)
+        i.moveDown()
+        utili.redraw(i)
+        if utili.find_collision_rect(player, i):
+            running = False
+        if i.y > SCREEN_HEIGHT:
+            spawn.zombiesList.remove(i)
+            print("delete")
+            
     #if not utili.find_collision_window(player, SCREEN_WIDTH, SCREEN_HEIGHT):        
-    if utili.find_collision_rect(player, zombie):
-        running = False
     #pygame.display.flip()
+    show_score(xS, yS)
     pygame.display.update()
     
 pygame.quit()

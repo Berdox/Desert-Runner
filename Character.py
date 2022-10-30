@@ -1,3 +1,5 @@
+import random
+SPEED = 4
 
 class Character:
     
@@ -16,13 +18,13 @@ class Player(Character):
         pass
     
     def  moveUp(self):
-        self.playerY_change -= 4
+        self.playerY_change -= SPEED
     def  moveDown(self):
-        self.playerY_change += 4
+        self.playerY_change += SPEED
     def  moveLeft(self):
-        self.playerX_change -= 4
+        self.playerX_change -= SPEED
     def  moveRight(self):
-        self.playerX_change += 4
+        self.playerX_change += SPEED
     def  updatePlayer(self):
         if self.x <= 10:
             self.x = 10
@@ -38,10 +40,8 @@ class Player(Character):
         self.playerX_change = 0
         self.playerY_change = 0
 
-
-
 class Zombie(Character):
-    speed = 4
+    
     def __init__(self, location, x, y, parent_screen):
         super().__init__(location, x, y, parent_screen)
         pass
@@ -50,7 +50,21 @@ class Zombie(Character):
         if(self.y > self.parent_screen.get_height()):
             self.y = 0
         else:
-            self.y += self.speed;  
+            self.y += SPEED;  
+        
+class Spawner:
+    zombiesList = []
+    chance = 1000
     
-    def movespeed(self, faster):
-        self.speed = faster
+    def __init__(self, screenWidth):
+        self.width = screenWidth
+    
+    def spawnZombie (self, loc, screen):
+        ran = random.randint(0, self.chance)
+        if ran < 10:
+            Swidth = random.randint(0, self.width)
+            self.zombiesList.append(Zombie(loc, Swidth, -10, screen))
+            print("made zombie")
+    
+    def changeSpawnRate(self, num):
+        self.chance = num       
