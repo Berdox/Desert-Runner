@@ -17,16 +17,16 @@ class backgroundDraw:
         self.screen = window
     
     def getResources(self):
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad.png"), (self.width, self.height)))
-        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/desertroad2.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/road.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/road2.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/road3.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/road3.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/road.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/road2.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/road2.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/road.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/road3.png"), (self.width, self.height)))
+        self.background.append(pygame.transform.scale(pygame.image.load("./resource/repeat/road2.png"), (self.width, self.height)))
         
         
     def run(self):
