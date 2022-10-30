@@ -98,10 +98,10 @@ while running:
         score_value += 1
     back.run()
     utili.redraw(player)
-    pygame.mixer.Sound.play(rumble)
+    #pygame.mixer.Sound.play(rumble)
     
     if over != True:
-        spawn.spawnZombie(utili.resize(pygame.image.load("./resource/zombie.png").convert_alpha(), 0.3), screen)
+        spawn.spawnZombie(utili.resize(pygame.image.load("./resource/zombie1.png").convert_alpha(), 0.3), screen)
     else:
         show_Game_Over()
         show_Play_Again()
