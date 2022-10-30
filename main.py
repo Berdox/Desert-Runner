@@ -43,8 +43,7 @@ def show_score(xS, yS):
     screen.blit(score, (xS, yS))
     
 rumble = pygame.mixer.Sound("./resource/sound/rumble.wav")
-rumble.set_volume(0.1)
-pygame.mixer.Sound.play(rumble)
+rumble.set_volume(0.01)
 accelrate = pygame.mixer.Sound("./resource/sound/accelrate.wav")
 accelrate.set_volume(0.1)
 
@@ -94,7 +93,7 @@ while running:
     pygame.mixer.Sound.play(rumble)
     
     if over != True:
-        spawn.spawnZombie(pygame.image.load("./resource/block.jpg").convert(), screen)
+        spawn.spawnZombie(utili.resize(pygame.image.load("./resource/zombie.png").convert_alpha(), 0.3), screen)
     else:
         show_Game_Over()
 
