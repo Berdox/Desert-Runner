@@ -2,3 +2,6 @@ rumble https://bigsoundbank.com/detail-0534-ac-cobra-engine.html
 accelrate  https://bigsoundbank.com/detail-0291-car-engine-2.html
 pumpkin.png  <a href="https://www.flaticon.com/free-icons/halloween" title="halloween icons">Halloween icons created by Good Ware - Flaticon</a>
 png editor  https://onlinepngtools.com/remove-png-border
+explosion https://mixkit.co/free-sound-effects/explosion/
+zombie https://freesound.org/people/gneube/sounds/315847/
+music https://freesound.org/people/Victor_Natas/sounds/653280/
