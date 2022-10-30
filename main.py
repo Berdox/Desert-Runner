@@ -109,8 +109,8 @@ while running:
         zombie_Sound.play()
         zombie_Sound.set_volume(0.2)
     else:
-        player_Crash = pygame.mixer.Sound('./resource/sound/explosion.wav')
-        player_Crash.play()
+        #player_Crash = pygame.mixer.Sound('./resource/sound/explosion.wav')
+        #player_Crash.play()
         show_Game_Over()
         show_Play_Again()
 
