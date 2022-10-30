@@ -1,3 +1,8 @@
+import pygame
+
+def resize(img, factor):
+    size = round(img.get_width() * factor), round(img.get_height() * factor)
+    return pygame.transform.scale(img, size)
 
 def redraw(image):
     image.parent_screen.blit(image.loc, (image.x, image.y))

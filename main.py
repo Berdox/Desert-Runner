@@ -23,7 +23,7 @@ FPS = 60
 clock = pygame.time.Clock()
 
 #player make
-locP = pygame.image.load("./resource/cartrans.png").convert()
+locP = utili.resize(pygame.image.load("./resource/cartrans.png").convert_alpha(), 0.18)
 xP = 250
 yP = 700
 player = Player(locP, xP, yP, screen)
