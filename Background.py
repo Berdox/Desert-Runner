@@ -8,6 +8,7 @@ class backgroundDraw:
     yValue = 0
     index = 0
     index2 = 1
+    speed = 2
     background = []
     
     def __init__(self, widthScreen, heightScreen, window):
@@ -31,11 +32,13 @@ class backgroundDraw:
             self.index +=1
             self.index2 +=1
         else:
-            self.yValue += 1
+            self.yValue += self.speed
         if self.index == len(self.background) - 1:
             self.index2 = 0
         if self.index2 == 1:
             self.index = 0
         self.screen.blit(self.background[self.index2], [0, -self.height+self.yValue])
             
-
+    def backgSpeed(self, faster):
+        self.speed = faster
+    

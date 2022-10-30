@@ -22,21 +22,18 @@ back.getResources()
 FPS = 60
 clock = pygame.time.Clock()
 
-def redraw(image):
-    image.parent_screen.blit(image.loc, (image.x, image.y))
-
 #player make
 locP = pygame.image.load("./resource/cartrans.png").convert()
 xP = 250
-yP = 100
+yP = 700
 player = Player(locP, xP, yP, screen)
-redraw(player)
+utili.redraw(player)
 
 locZ = pygame.image.load("./resource/block.jpg").convert()
 xZ = 250
 yZ = 0
 zombie = Zombie(locZ, xZ, yZ, screen)
-redraw(zombie)
+utili.redraw(zombie)
 
 while running:
     
@@ -45,21 +42,20 @@ while running:
     for event in pygame.event.get():
         if event.type == KEYDOWN:
                 
-                if event.key == K_ESCAPE:
-                    running = False
+            if event.key == K_ESCAPE:
+                running = False
                     
-                if not utili.find_collision_window(player, SCREEN_WIDTH, SCREEN_HEIGHT):        
-                    if event.key == K_UP:
-                        player.moveUp()
+            if event.key == K_UP:
+                player.moveUp()
                 
-                    if event.key == K_DOWN:
-                        player.moveDown()
+            if event.key == K_DOWN:
+                player.moveDown()
                 
-                    if event.key == K_LEFT:
-                        player.moveLeft()
+            if event.key == K_LEFT:
+                player.moveLeft()
                     
-                    if event.key == K_RIGHT:
-                        player.moveRight()
+            if event.key == K_RIGHT:
+                player.moveRight()
 
         if event.type == KEYUP:
             player.resetXYChange()
@@ -70,9 +66,12 @@ while running:
     player.updatePlayer()
 
     back.run()
-    redraw(player)
+    utili.redraw(player)
     zombie.moveDown()
-    redraw(zombie)
+    utili.redraw(zombie)
+    #if not utili.find_collision_window(player, SCREEN_WIDTH, SCREEN_HEIGHT):        
+    if utili.find_collision_rect(player, zombie):
+        running = False
     #pygame.display.flip()
     pygame.display.update()
     

@@ -12,5 +12,21 @@ def find_collision_window(item, width, height):
     if rect.left >= height or rect.top <= 0:
         return True
 
-def find_collision_rect(rect1, rect2):
-    pass
+collision_tolerance = 5
+def find_collision_rect(player, zombies):
+    prect = player.loc.get_rect()
+    prect.x = player.x
+    prect.y = player.y
+    zrect = zombies.loc.get_rect()
+    zrect.x = zombies.x
+    zrect.y = zombies.y
+    if prect.colliderect(zrect):
+        if abs(prect.top - zrect.bottom) < collision_tolerance:
+            return True
+        if abs(zrect.bottom - zrect.top) < collision_tolerance:
+            return True
+        if abs(prect.right - zrect.left) < collision_tolerance:
+            return True
+        if abs(prect.left - zrect.right) < collision_tolerance:
+            return True
+        
