@@ -109,6 +109,8 @@ while running:
         zombie_Sound.play()
         zombie_Sound.set_volume(0.2)
     else:
+        player_Crash = pygame.mixer.Sound('./resource/sound/explosion.wav')
+        player_Crash.play()
         show_Game_Over()
         show_Play_Again()
 
@@ -116,8 +118,6 @@ while running:
         i.moveDown()
         utili.redraw(i)
         if utili.find_collision_rect(player, i):
-            #player_Crash = pygame.mixer.Sound('./resource/sound/explosion.wav')
-            #player_Crash.play()
             for i in spawn.zombiesList:
                 spawn.zombiesList.remove(i)
             over = True
