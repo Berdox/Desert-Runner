@@ -2,7 +2,7 @@
 A pygame made for the UofL 2022 Hack'O'Ween 
 
 
-#How to build
+# How to build program
 1. open a terminal in the root directory of project\n
 2. - run this in command in the terminal ```.venv\scripts\activate``` to activate the virtual environment
     - may need to run ```Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process``` to let scripts run on Windows
